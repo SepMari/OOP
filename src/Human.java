@@ -1,8 +1,8 @@
 public class Human {
 
-    int yearOfBirth;
+    private int yearOfBirth;
     String name;
-    String town;
+    private String town;
     String job;
 
     public Human(int yearOfBirth, String town, String job) {
@@ -29,7 +29,6 @@ public class Human {
         }
     }
 
-
     @Override
     public String toString() {
         return "Привет! Меня зовут " + name +
@@ -37,6 +36,22 @@ public class Human {
                 ". Я родился в " + yearOfBirth +
                 " году. Я работаю на должности " + job +
                 ". Будем знакомы!";
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
     }
 }
 
