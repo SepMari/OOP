@@ -5,28 +5,22 @@ public class Human {
     private String town;
     String job;
 
-    public Human(int yearOfBirth, String town, String job) {
-        this(yearOfBirth, "Информация не указана", town, job);
-    }
-
-    public Human(int yearOfBirth, String job) {
-        this(yearOfBirth, "Информация не указана", job);
-    }
-
-    public Human(int yearOfBirth) {
-        this(yearOfBirth, "Информация не указана");
-    }
-
     public Human(int yearOfBirth, String name, String town, String job) {
-        this.name = name;
-        this.town = town;
-        this.job = job;
+        if (name == null || name.isEmpty() || name.isBlank()){
+            this.name = "Информация не указана";
+        } else this.name = name;
 
-        if (yearOfBirth >=0) {
+        if (job == null || job.isEmpty() || job.isBlank()){
+            this.job = "Информация не указана";
+        } else this.job = job;
+
+        if (town == null || town.isEmpty() || town.isBlank()){
+            this.town = "Информация не указана";
+        } else this.town = town;
+
+        if (yearOfBirth >= 0) {
             this.yearOfBirth = yearOfBirth;
-        } else {
-            this.yearOfBirth = 0;
-        }
+        } else this.yearOfBirth = 0;
     }
 
     @Override
@@ -43,7 +37,10 @@ public class Human {
     }
 
     public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
+        if (yearOfBirth >=0 || yearOfBirth != 0) {
+            this.yearOfBirth = yearOfBirth;
+        } else this.yearOfBirth = 0;
+
     }
 
     public String getTown() {
@@ -51,7 +48,9 @@ public class Human {
     }
 
     public void setTown(String town) {
-        this.town = town;
+        if (town == null || town.isEmpty() || town.isBlank()){
+            this.town = "Информация не указана";
+        } else this.town = town;
     }
 }
 
